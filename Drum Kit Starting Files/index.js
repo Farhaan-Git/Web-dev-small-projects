@@ -1,54 +1,48 @@
 
 for(let i = 0;i<document.querySelectorAll("button").length;i++){
-    if(i==4){
-        document.querySelectorAll("button")[i].addEventListener("click",function(){
-            let aud = new Audio("sounds/crash.mp3");
-            aud.play();
-        });
-    }
-    else if(i==5){
-        document.querySelectorAll("button")[i].addEventListener("click",function(){
-            let aud = new Audio("sounds/kick-bass.mp3");
-            aud.play();
-        });
-    }
-    else  if(i==6){
-        document.querySelectorAll("button")[i].addEventListener("click",function(){
-            let aud = new Audio("sounds/snare.mp3");
-            aud.play();
-        });
-    }
-    else{
-        document.querySelectorAll("button")[i].addEventListener("click",function(){
-            let aud = new Audio("sounds/tom-"+(i+1)+".mp3");
-            aud.play();
-        });
-    }
-}
+    document.querySelectorAll("button")[i].addEventListener("click",function(){
+        handleEvent(document.querySelectorAll("button")[i].innerText);
 
+});
+}
+function handleEvent(event){
+switch(event){
+    case "w":
+        buttonAnimations(event);
+        new Audio("sounds/tom-1.mp3").play();
+        break;
+    case "a":
+        buttonAnimations(event);
+        new Audio("sounds/tom-2.mp3").play();
+        break;
+    case "s":
+        buttonAnimations(event);
+        new Audio("sounds/tom-3.mp3").play();
+        break;
+    case "d":
+        buttonAnimations(event);
+        new Audio("sounds/tom-4.mp3").play();
+        break;
+    case "j":
+        buttonAnimations(event);
+        new Audio("sounds/crash.mp3").play();
+        break;
+    case "k":
+        buttonAnimations(event);
+        new Audio("sounds/kick-bass.mp3").play();
+        break;
+    case "l":
+        buttonAnimations(event);
+        new Audio("sounds/snare.mp3").play();
+        break;
+        
+}
+}
 document.addEventListener("keydown",function(event){
-    switch(event.key){
-        case "w":
-            new Audio("sounds/tom-1.mp3").play();
-            break;
-        case "a":
-            new Audio("sounds/tom-2.mp3").play();
-            break;
-        case "s":
-            new Audio("sounds/tom-3.mp3").play();
-            break;
-        case "d":
-            new Audio("sounds/tom-4.mp3").play();
-            break;
-        case "j":
-            new Audio("sounds/crash.mp3").play();
-            break;
-        case "k":
-            new Audio("sounds/kick-bass.mp3").play();
-            break;
-        case "l":
-            new Audio("sounds/snare.mp3").play();
-            break;
-            
-    }
-})
+handleEvent(event.key);
+});
+
+function buttonAnimations(event){
+document.querySelector("."+event).classList.toggle("pressed");
+setTimeout(function(){document.querySelector("."+event).classList.toggle("pressed");},100);
+}
