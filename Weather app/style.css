@@ -1,0 +1,128 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* border: 2px solid black; */
+    border: none;
+    outline: none;
+    box-sizing: border-box; 
+    /* box-sizing is used to calculate the height and width of an element along with their padding  */
+}
+.container{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+    min-height: 100vh;
+}
+.searchbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.input-feild{
+    padding: 10px;
+    margin: 5px;
+}
+#search-icon{
+    background-color: white;
+    padding: 10px;
+    margin: 3px;
+    cursor: pointer;
+}
+.weather-app-container{
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 55%;
+    height: 55%;
+    padding: 10px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 15% 35% 15% 10% 25%;
+}
+#card-city-name{
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#weather-img-container{
+    grid-row: 2/3;
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#degree{
+    grid-row: 3/4;
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#weather-in-text{
+    grid-row: 4/5;
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#humidity-container{
+    grid-row: 5/6;
+    grid-column: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#wind-speed-container{
+    padding: 10px;
+    grid-row: 5/6;
+    grid-column: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.humidity{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+}
+.wind-speed{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+}
+#icons{
+    display: flex;
+    font-size: x-large;
+    justify-content:flex-end;
+    align-items: center;
+    grid-column: 1/2;
+    grid-row: 1/-1;
+}
+.values{
+    display: flex;
+    align-items: flex-end;
+    justify-content:flex-start;
+}
+.title{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+

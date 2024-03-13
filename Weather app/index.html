@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="searchbox">
+            <input class="input-feild" type="text" placeholder="Enter your city location">
+            <button class="fa-solid fa-magnifying-glass" id="search-icon"></button>
+        </div>
+
+        <div class="weather-app-container">
+            <div class="card">
+                <h1 id="card-city-name">Chennai</h1>
+                <div id="weather-img-container">
+                    <img id="weather-img" src="images/demo-img.png" alt="weather-forecast-image" height="100px" width="100px">
+                </div>
+                <h1 id="degree">15 <sup>°C</sup></h1>
+                <div id="weather-in-text">Scatter Clouds</div>
+                <div id="humidity-container">
+                    <div class="humidity">
+                        <div id="icons" class="fa-solid fa-droplet "></div>
+                        <div class="values">33%</div>
+                        <div class="title">Humidity</div>
+                    </div>
+                </div>
+                <div id="wind-speed-container">
+                    <div class="wind-speed">
+                        <div id="icons" class="fa-solid fa-wind "></div>
+                        <div class="values">2.01 Km/H</div>
+                        <div class="title">wind speed</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/89d1034fc2.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
+
+<!-- sup tag aint working idk why -->
