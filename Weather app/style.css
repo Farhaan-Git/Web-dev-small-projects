@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: #ffdf2c;
 }
 .input-feild{
     padding: 10px;
@@ -30,7 +30,7 @@
     cursor: pointer;
 }
 .weather-app-container{
-    background-color: blue;
+    background-color: skyblue;
     display: flex;
     justify-content: center;
     align-items: center;
