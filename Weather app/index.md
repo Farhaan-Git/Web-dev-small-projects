@@ -1,4 +1,4 @@
-#**WEATHER APP**
+# ** WEATHER APP **
 
 ## Description
       Introducing my innovative weather app, designed to provide users with accurate and up-to-date weather information based on their inputted city name or country. 
