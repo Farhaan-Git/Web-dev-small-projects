@@ -20,6 +20,7 @@ body{
     height: 100vh;
 }
 #container{
+    position: relative;
     display: grid;
     /* grid-template-columns: 20% 40% 40%;
     grid-template-rows: 50% 50%; */
@@ -70,4 +71,15 @@ body{
 }
 .select{
     box-shadow: 4px 4px 10px 7px rgb(186, 186, 186);
+}
+#start{
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+.startclass{
+    opacity: 0.4;
 }
