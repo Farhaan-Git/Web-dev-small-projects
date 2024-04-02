@@ -104,26 +104,23 @@ async function validate(ptr1,ptr2){
         }
 }
 
-function showAns() {
-    return new Promise((resolve,reject)=>{
-        ans.push(getRandom_Value());
-        let index = 0;
-        let interval = setInterval(() => {
-            if (index >= ans.length) {
-                clearInterval(interval);
-                return;
-            }
-            blink(ans[index]);
-            index++;
-        }, 1000);
-    });
+async function showAns() {
+    ans.push(getRandom_Value());
+    let index = 0;
+    let interval = setInterval(async () => {
+                            if (index >= ans.length) {
+                                return clearInterval(interval);
+                            }
+                            await blink(ans[index]);
+                            index++;
+                        }, 1000);
 }
 
- function blink(val){
+async function blink(val){
     $("#"+val).addClass("select");
-    setTimeout(() => {
+    const  timeOut = setTimeout(() => {
         $("#"+val).removeClass("select");
-    }, 500); 
+    }, 250); 
 }
     
 
