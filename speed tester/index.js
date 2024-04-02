@@ -17,9 +17,9 @@ function startTest() {
 
 function calculateSpeed() {
     const typedText = input.value.trim();
-    const elapsedTime = (Date.now() - startTime) / 1000; // in seconds
+    const elapsedTime = (Date.now() - startTime) / 1000; 
     const words = typedText.split(" ").length;
-    const speed = Math.round(words / (elapsedTime / 60)); // words per minute
+    const speed = Math.round(words / (elapsedTime / 60)); 
     resultElement.textContent = `Your typing speed is ${speed} WPM`;
 }
 
