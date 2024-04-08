@@ -61,16 +61,8 @@ app.get("",(req,res)=>{
     res.render(__dirname + "/views/home.ejs",{arr});
 });
 
-// app.get('/block',(req,res)=>{
-//     console.log(req.query.id);
-//     let obj = searchId(req.query.id);
-//     console.log("inside the block queery "+obj.id);
-//     res.render(__dirname +"/views/showblog.ejs",obj);
-    
-// });
-
 app.get('/block', (req, res) => {
-    const id = req.query.id;
+    const id = Number(req.query.id);
     console.log(id);
     let obj = searchId(id);
     if (obj) {
@@ -89,11 +81,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/submit',(req,res)=>{
     const  d = new Date();
     const date = `${(d.getFullYear()).toString()}-${(d.getMonth()).toString()}-${(d.getDay()).toString()}-${(d.getHours()).toString()}:00 `;
-    let obj = new Blog(req.body.title,date,req.body.content,req.body.description,generateId());
-    console.log(obj.id);
-    console.log(obj.time);
-    arr.push(obj);
-    let temp = searchId(obj.id);
+    // let obj = new Blog(req.body.title,date,req.body.content,req.body.description,generateId());
+    let obj1 = {title: req.body.title,time : date, content:req.body.content,description : req.body.description,id:generateId()};
+    console.log(obj1.id);
+    console.log(obj1.time);
+    arr.push(obj1);
+    let temp = searchId(obj1.id);
     console.log("after search "+temp.id);
     res.redirect('/');
 });
