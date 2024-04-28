@@ -46,16 +46,18 @@ app.post("/add", async (req,res) =>{
   const val = req.body.country.trim();
   // console.log(req.body.country); // comment this line !!!!!!
   const code = await db.query(`select country_code from countries where country_name = '${val}';`);
-  if(code.rows === null){
+  if(code.rows.length === 0){
     console.log("error country not found");
+    res.render("index.ejs",{error : "Country not added wrong name entered!",total : total,countries : countries});
   }
   else{
     if(await searchVisited(code.rows[0].country_code)){
       // countries.push(code.rows[0].country_code);
       const result = await db.query(`insert into visited_countries (country_code) values ('${code.rows[0].country_code}');`);
     }
+    res.redirect("/");
   }
-  res.redirect("/");
+  
 });
 
 app.listen(port, () => {
